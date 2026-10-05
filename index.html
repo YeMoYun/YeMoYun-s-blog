@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEO - High Fidelity UI Clone</title>
+  <meta name="description" content="Static high-fidelity personal portfolio clone with interactive hero lens and flip skill cards." />
+  <script src="./js/theme.js?v=20260516-1"></script>
+  <link rel="stylesheet" href="./css/base.css?v=20260516-1" />
+  <link rel="stylesheet" href="./css/layout.css?v=20260516-1" />
+  <link rel="stylesheet" href="./css/sections.css?v=20260908-1" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">LEO</div>
+    <nav class="nav">
+      <a href="#about" class="nav-link is-active">关于</a>
+      <a href="#skills" class="nav-link">技能</a>
+      <a href="#projects" class="nav-link">项目</a>
+      <a href="#cooperation" class="nav-link">合作</a>
+      <a href="./blog.html" class="nav-link nav-link-blog">博客</a>
+    </nav>
+    <div class="header-right">
+      <span class="location">河北 邯郸</span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换白天和夜间模式"></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="hero-section dotted-bg">
+      <div class="hero-inner">
+        <div class="hero-chip">PORTFOLIO / AI AGENT / INTERACTIVE UI</div>
+
+        <div class="hero-stage" id="heroStage">
+          <div class="hero-title-layer hero-title-base-layer" id="heroBaseLayer">
+            <div class="hero-title base-title" id="baseTitle">
+              <span class="hello-word">HELLO,</span>
+              <span class="im-word">I'M</span>
+              <span class="leo-word">Moyun</span>
+            </div>
+          </div>
+
+          <div class="hero-sphere" id="heroSphere" aria-hidden="true">
+            <div class="sphere-ring ring-1"></div>
+            <div class="sphere-ring ring-2"></div>
+            <div class="sphere-ring ring-3"></div>
+            <div class="sphere-ring ring-4"></div>
+            <div class="sphere-core"></div>
+            <div class="sphere-dot"></div>
+            <div class="sphere-caption">智能</div>
+          </div>
+
+          <div class="hero-title-layer hero-title-mask-layer" id="heroMaskLayer" aria-hidden="true">
+            <div class="hero-title mask-title" id="maskTitle">
+              <span class="cn-word">你好 我是</span>
+              <span class="cn-leo">墨云</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero-subtitle">AI Agent Engineer / 21岁 / 河北邯郸</p>
+        <p class="hero-hint">移动鼠标开启探索视觉。向下滚动查看更多</p>
+        <div class="hero-entry-row">
+          <a href="./blog.html" class="hero-entry-btn">进入我的博客</a>
+          <div class="hero-entry-note">查看最新文章 / 日记 / 项目记录</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section stripe-bg">
+      <div class="section-grid">
+        <aside class="section-side-title">
+          <div class="section-kicker"></div>
+          <h2>专业技<br />能</h2>
+        </aside>
+
+        <div class="skills-content">
+          <article class="skill-flip-card primary-skill-card">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="skill-card-head">
+                  <div class="skill-card-badge">AI</div>
+                  <div>
+                    <h3>AI Agent 核心</h3>
+                    <p>智能体设计 / LLM 应用 / RAG / 多智能体协作</p>
+                  </div>
+                </div>
+
+                <div class="skill-rows">
+                  <button class="skill-row" type="button" data-detail="从任务拆解、工具调用到状态机设计，适合复杂智能体业务流。">
+                    <span class="skill-row-main">AI Agent 架构设计</span>
+                    <span class="skill-row-meter"><span class="meter-dot"></span></span>
+                    <span class="skill-row-tag">精通</span>
+                  </button>
+                  <button class="skill-row" type="button" data-detail="用提示链、函数调用与上下文管理完成实际可用的 LLM 场景开发。">
+                    <span class="skill-row-main">LLM 应用开发</span>
+                    <span class="skill-row-meter"><span class="meter-dot"></span></span>
+                    <span class="skill-row-tag">精通</span>
+                  </button>
+                  <button class="skill-row" type="button" data-detail="知识切片、召回、重排与答案约束，解决可追溯和稳定输出问题。">
+                    <span class="skill-row-main">RAG 检索增强</span>
+                    <span class="skill-row-meter"><span class="meter-dot"></span></span>
+                    <span class="skill-row-tag">熟练</span>
+                  </button>
+                  <button class="skill-row" type="button" data-detail="规划型 Agent 与执行型 Agent 协同，拆分复杂任务并形成闭环。">
+                    <span class="skill-row-main">多智能体系统</span>
+                    <span class="skill-row-meter"><span class="meter-dot"></span></span>
+                    <span class="skill-row-tag">熟练</span>
+                  </button>
+                </div>
+
+                <div class="skill-hover-panel" id="skillHoverPanel">
+                  将鼠标移到条目上查看反转效果和详细内容。
+                </div>
+              </div>
+
+              <div class="flip-face flip-back">
+                <div class="skill-card-head back-head">
+                  <div class="skill-card-badge dark">AI</div>
+                  <div>
+                    <h3>AI Agent 深度视图</h3>
+                  </div>
+                </div>
+                <div class="back-grid">
+                  <div class="back-block">
+                    <span class="back-label">重点方向</span>
+                    <strong>Architecture / Workflow / Tools</strong>
+                  </div>
+                  <div class="back-block">
+                    <span class="back-label">落地能力</span>
+                    <strong>Prompt · Function Call · Memory</strong>
+                  </div>
+                  <div class="back-block wide">
+                    <span class="back-label">典型输出</span>
+                    <strong>企业问答、知识助手、业务流程自动化、个人生产力工具</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="skills-lower-grid">
+            <article class="skill-flip-card stat-skill-card">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <div class="skill-card-head">
+                    <div class="skill-card-badge">JV</div>
+                    <div>
+                      <h3>后端开发</h3>
+                      <p>Java生态与高性能服务开发</p>
+                    </div>
+                  </div>
+                  <div class="stat-grid">
+                    <div class="stat-box">
+                      <strong>3+</strong>
+                      <span>核心技能</span>
+                    </div>
+                    <div class="stat-box">
+                      <strong>1</strong>
+                      <span>精通</span>
+                    </div>
+                    <div class="stat-box">
+                      <strong>95%</strong>
+                      <span>最高掌握度</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flip-face flip-back dark-back">
+                  <div class="skill-card-head back-head light-text">
+                    <div class="skill-card-badge white">JV</div>
+                    <div>
+                      <h3>后端开发补充</h3>
+                    </div>
+                  </div>
+                  <ul class="simple-detail-list light-text">
+                    <li>Spring Boot 接口开发与业务拆分</li>
+                    <li>MySQL / Redis 常见业务场景处理</li>
+                    <li>基础部署、日志排查与接口联调</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill-flip-card stat-skill-card compact-card">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <div class="skill-card-head">
+                    <div class="skill-card-badge">LE</div>
+                    <div>
+                      <h3>语言能力</h3>
+                      <p>语言 / 表达 / 沟通</p>
+                    </div>
+                  </div>
+                  <div class="stat-grid small-gap">
+                    <div class="stat-box">
+                      <strong>2</strong>
+                      <span>语言</span>
+                    </div>
+                    <div class="stat-box">
+                      <strong>1</strong>
+                      <span>母语</span>
+                    </div>
+                    <div class="stat-box">
+                      <strong>80%</strong>
+                      <span>英文阅读</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flip-face flip-back soft-back">
+                  <div class="skill-card-head back-head">
+                    <div class="skill-card-badge">LE</div>
+                    <div>
+                      <h3>表达能力补充</h3>
+                    </div>
+                  </div>
+                  <ul class="simple-detail-list">
+                    <li>能把复杂技术点翻译成普通人能理解的话</li>
+                    <li>能写项目说明、使用文档和问题复盘</li>
+                    <li>能支撑求职展示、沟通协作和交付表达</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section dotted-bg soft-top-border">
+      <div class="section-grid projects-grid">
+        <aside class="section-side-title narrow">
+          <div class="section-kicker"></div>
+          <h2>项目经<br />历</h2>
+        </aside>
+
+        <div class="project-stack">
+          <article class="project-card tilt-card">
+            <div class="project-index">01</div>
+            <h3>小厨食谱</h3>
+            <div class="project-tags">
+              <span>新手食谱</span><span>AI 助手</span><span>语音交互</span>
+            </div>
+            <p>面向做饭新手的食谱与 AI 助手应用，将食谱浏览与语音交互结合，为日常下厨提供便捷的参考与帮助，让从“今天吃什么”到动手做饭更轻松。</p>
+            <a class="project-visit-link" href="https://47.96.177.128/assistant" target="_blank" rel="noopener noreferrer" aria-label="体验小厨食谱（在新窗口打开）">体验小厨食谱 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-index">02</div>
+            <h3>前端交互展示站</h3>
+            <div class="project-tags">
+              <span>UI Motion</span><span>Static Site</span><span>Vanilla JS</span>
+            </div>
+            <p>高保真实现黑白极简交互页面，包含鼠标透镜、标题动态倾斜、反转行和翻转卡片效果。</p>
+          </article>
+          <article class="project-card">
+            <div class="project-index">03</div>
+            <h3>RAG 知识问答系统</h3>
+            <div class="project-tags">
+              <span>Retrieval</span><span>Ranking</span><span>Traceability</span>
+            </div>
+            <p>结合知识切片、召回和答案约束，实现可追溯知识问答场景，重点解决答案稳定性问题。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cooperation" class="cooperation-section stripe-bg">
+      <div class="section-grid cooperation-grid">
+        <aside class="section-side-title narrow">
+          <div class="section-kicker"></div>
+          <h2>与我合<br />作</h2>
+        </aside>
+
+        <div class="coop-content">
+          <div class="coop-cards">
+            <article class="coop-card">
+              <div class="coop-icon">P</div>
+              <h3>页面开发</h3>
+              <p>静态网页、展示站、品牌落地页和高保真视觉实现。</p>
+            </article>
+            <article class="coop-card accent">
+              <div class="coop-icon">I</div>
+              <h3>交互实现</h3>
+              <p>鼠标透镜、跟随动画、卡片翻转和复杂前端视觉细节处理。</p>
+            </article>
+            <article class="coop-card">
+              <div class="coop-icon">B</div>
+              <h3>作品包装</h3>
+              <p>把普通项目页面升级成更像作品集的展示版本，适合求职与输出。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/cms-config.js?v=20260516-1"></script>
+  <script src="https://static.cloudbase.net/cloudbase-js-sdk/latest/cloudbase.full.js"></script>
+  <script src="./js/data.js?v=20260516-1"></script>
+  <script src="./js/app.js?v=20260516-1"></script>
+</body>
+</html>

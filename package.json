@@ -1,0 +1,14 @@
+{
+  "name": "moyun-blog-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted blog site for Tencent Cloud Lighthouse deployment",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node tests/server-backup.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

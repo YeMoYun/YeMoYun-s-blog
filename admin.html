@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moyun CMS Admin</title>
+  <script src="./js/theme.js?v=20260423-1"></script>
+  <link rel="stylesheet" href="./css/base.css?v=20260423-1" />
+  <link rel="stylesheet" href="./css/layout.css?v=20260423-1" />
+  <link rel="stylesheet" href="./css/sections.css?v=20260423-1" />
+  <link rel="stylesheet" href="./css/admin.css?v=20260423-1" />
+</head>
+<body class="admin-body stripe-bg">
+  <header class="site-header">
+    <a class="brand" href="./index.html">LEO</a>
+    <nav class="nav">
+      <a href="./index.html#about" class="nav-link">关于</a>
+      <a href="./index.html#skills" class="nav-link">技能</a>
+      <a href="./index.html#projects" class="nav-link">项目</a>
+      <a href="./index.html#cooperation" class="nav-link">合作</a>
+      <a href="./blog.html" class="nav-link">博客</a>
+      <a href="./admin.html" class="nav-link is-active">后台</a>
+    </nav>
+    <div class="header-right">
+      <span class="location">内容管理</span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换白天和夜间模式"></button>
+      <button class="lang-switch" type="button" id="refreshAdminBtn">刷新</button>
+    </div>
+  </header>
+
+  <main class="admin-main soft-top-border">
+    <section class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="admin-panel">
+          <div class="panel-head">
+            <span class="panel-badge">A</span>
+            <div>
+              <h2>后台发布</h2>
+              <p>你在这里确认当前接入模式。正式上线推荐用 CloudBase CMS 管理端发文章。</p>
+            </div>
+          </div>
+          <div class="admin-mode" id="adminModeText">当前模式：Demo CMS（本地演示）</div>
+          <div class="admin-stats" id="adminStats"></div>
+          <div class="admin-cta-group">
+            <button class="solid-btn" type="button" id="openCmsAdminBtn">打开 CMS 管理端</button>
+            <button class="ghost-btn" type="button" id="openBlogFrontBtn">打开前台博客</button>
+            <button class="ghost-btn" type="button" id="exportPostsBackupBtn">下载文章备份</button>
+          </div>
+          <div class="admin-note-block" id="adminNoteBlock">
+            默认说明：本地 Demo 模式适合演示前后台流程；真上线时，把文章发布动作切换到 CloudBase CMS 官方后台。
+          </div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-head compact-head">
+            <div>
+              <h2>文章列表</h2>
+              <p>当前数据源里可见的文章会显示在这里</p>
+            </div>
+          </div>
+          <div class="post-admin-list" id="adminPostList"></div>
+        </div>
+      </aside>
+
+      <section class="admin-editor-area">
+        <div class="admin-panel editor-panel">
+          <div class="panel-head">
+            <span class="panel-badge">P</span>
+            <div>
+              <h2>文章编辑器</h2>
+              <p id="editorModeDesc">默认保存为草稿。发布后前台博客会按时间倒序显示。</p>
+            </div>
+          </div>
+
+          <form id="postForm" class="post-form">
+            <div class="form-grid two-col">
+              <label>
+                <span>标题</span>
+                <input name="title" type="text" maxlength="80" placeholder="输入文章标题" required />
+              </label>
+              <label>
+                <span>链接标识 slug</span>
+                <input name="slug" type="text" maxlength="100" placeholder="自动生成，可手改" />
+              </label>
+            </div>
+
+            <div class="form-grid two-col">
+              <label>
+                <span>分类</span>
+                <input name="category" type="text" maxlength="30" placeholder="例如：开发日记 / 设计记录" />
+              </label>
+              <label>
+                <span>标签</span>
+                <input name="tags" type="text" maxlength="120" placeholder="用英文逗号分隔，例如：博客,前端,日记" />
+              </label>
+            </div>
+
+            <div class="form-grid two-col">
+              <label>
+                <span>发布时间</span>
+                <input name="publishedAt" type="datetime-local" />
+              </label>
+              <label>
+                <span>状态</span>
+                <select name="status">
+                  <option value="draft">草稿</option>
+                  <option value="published">已发布</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>摘要</span>
+              <textarea name="excerpt" rows="3" placeholder="输入文章摘要"></textarea>
+            </label>
+
+            <label>
+              <span>正文</span>
+              <textarea name="content" rows="14" placeholder="每段之间空一行。前台会自动拆成多个段落。"></textarea>
+            </label>
+
+            <div class="editor-actions">
+              <input type="hidden" name="id" />
+              <button type="button" class="ghost-btn" id="newPostBtn">新建文章</button>
+              <button type="button" class="ghost-btn" id="previewPostBtn">前台预览</button>
+              <button type="button" class="ghost-btn danger-btn" id="deletePostBtn">删除</button>
+              <button type="submit" class="solid-btn" id="savePostBtn">保存文章</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./js/blog-data.js?v=20260423-1"></script>
+  <script src="./js/cms-config.js?v=20260423-1"></script>
+  <script src="https://static.cloudbase.net/cloudbase-js-sdk/latest/cloudbase.full.js"></script>
+  <script src="./js/cms-service.js?v=20260423-1"></script>
+  <script src="./js/admin.js?v=20260423-1"></script>
+</body>
+</html>

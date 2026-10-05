@@ -1,0 +1,202 @@
+:root {
+  --bg: #f5f5f3;
+  --panel: rgba(255,255,255,0.86);
+  --panel-strong: #ffffff;
+  --text: #0d0d0d;
+  --muted: #8d8d8d;
+  --line: rgba(0,0,0,0.08);
+  --shadow: 0 24px 56px rgba(0,0,0,0.06);
+  --header-bg: rgba(245,245,243,0.94);
+  --panel-soft: rgba(0,0,0,0.035);
+  --panel-hover: rgba(0,0,0,0.055);
+  --button-bg: #0d0d0d;
+  --button-text: #ffffff;
+  --field-bg: rgba(0,0,0,0.04);
+  --dot-color: rgba(0,0,0,0.12);
+  --stripe-color: rgba(0,0,0,0.03);
+  --hero-inverse: #ffffff;
+  --radius-xl: 34px;
+  --radius-lg: 28px;
+  --radius-md: 22px;
+  --maxw: 1440px;
+  --hero-sphere-size: 240px;
+  --lens-size: 170px;
+}
+
+:root[data-theme="night"] {
+  --bg: #0b0d10;
+  --panel: rgba(22,25,30,0.88);
+  --panel-strong: #15181d;
+  --text: #f4f0e8;
+  --muted: #a19a90;
+  --line: rgba(255,255,255,0.12);
+  --shadow: 0 24px 64px rgba(0,0,0,0.38);
+  --header-bg: rgba(11,13,16,0.92);
+  --panel-soft: rgba(255,255,255,0.07);
+  --panel-hover: rgba(255,255,255,0.10);
+  --button-bg: #f4f0e8;
+  --button-text: #0b0d10;
+  --field-bg: rgba(255,255,255,0.08);
+  --dot-color: rgba(255,255,255,0.12);
+  --stripe-color: rgba(255,255,255,0.045);
+  --hero-inverse: #0b0d10;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background .24s ease, color .24s ease;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dotted-bg {
+  background-image: radial-gradient(var(--dot-color) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+}
+
+.stripe-bg {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--stripe-color) 0,
+    var(--stripe-color) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+}
+
+.soft-top-border {
+  border-top: 1px solid var(--line);
+}
+
+:root[data-theme="night"] input,
+:root[data-theme="night"] textarea,
+:root[data-theme="night"] select {
+  color: var(--text);
+}
+
+:root[data-theme="night"] input::placeholder,
+:root[data-theme="night"] textarea::placeholder {
+  color: rgba(244,240,232,0.46);
+}
+
+:root[data-theme="night"] .blog-panel,
+:root[data-theme="night"] .admin-panel,
+:root[data-theme="night"] .skill-flip-card,
+:root[data-theme="night"] .project-card,
+:root[data-theme="night"] .coop-card {
+  background: var(--panel);
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+:root[data-theme="night"] .post-card,
+:root[data-theme="night"] .post-admin-item,
+:root[data-theme="night"] .admin-mode,
+:root[data-theme="night"] .admin-stat,
+:root[data-theme="night"] .admin-note-block,
+:root[data-theme="night"] .detail-aside-note,
+:root[data-theme="night"] .post-inline-comments,
+:root[data-theme="night"] .comment-item,
+:root[data-theme="night"] .empty-state,
+:root[data-theme="night"] .skill-hover-panel,
+:root[data-theme="night"] .back-block,
+:root[data-theme="night"] .stat-box {
+  background: var(--panel-soft);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+:root[data-theme="night"] .solid-btn,
+:root[data-theme="night"] .post-read-btn.is-open,
+:root[data-theme="night"] .post-comment-btn,
+:root[data-theme="night"] .quick-tag.is-active,
+:root[data-theme="night"] .calendar-day.has-post,
+:root[data-theme="night"] .hero-filter-btn.is-active,
+:root[data-theme="night"] .panel-badge,
+:root[data-theme="night"] .post-tag {
+  background: var(--button-bg);
+  color: var(--button-text);
+}
+
+:root[data-theme="night"] .ghost-btn,
+:root[data-theme="night"] .hero-filter-btn,
+:root[data-theme="night"] .quick-tag,
+:root[data-theme="night"] .calendar-day,
+:root[data-theme="night"] .timeline-item,
+:root[data-theme="night"] input,
+:root[data-theme="night"] textarea,
+:root[data-theme="night"] select,
+:root[data-theme="night"] .search-input-wrap {
+  background: var(--field-bg);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+:root[data-theme="night"] .post-card:hover,
+:root[data-theme="night"] .post-card.is-expanded,
+:root[data-theme="night"] .post-admin-item.is-active,
+:root[data-theme="night"] .timeline-item:hover,
+:root[data-theme="night"] .hero-filter-btn:hover,
+:root[data-theme="night"] .quick-tag:hover,
+:root[data-theme="night"] .calendar-day.has-post:hover {
+  background: var(--panel-hover);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+:root[data-theme="night"] .hero-chip,
+:root[data-theme="night"] .blog-hero-chip,
+:root[data-theme="night"] .post-card-time,
+:root[data-theme="night"] .post-card-excerpt,
+:root[data-theme="night"] .timeline-date,
+:root[data-theme="night"] .timeline-tag,
+:root[data-theme="night"] .calendar-filter-text,
+:root[data-theme="night"] .result-bar p,
+:root[data-theme="night"] .panel-head p,
+:root[data-theme="night"] .blog-hero-copy,
+:root[data-theme="night"] .hero-subtitle,
+:root[data-theme="night"] .hero-hint,
+:root[data-theme="night"] .comment-item-time,
+:root[data-theme="night"] .comment-item-contact,
+:root[data-theme="night"] .admin-panel p,
+:root[data-theme="night"] .post-form label span {
+  color: var(--muted);
+}
+
+:root[data-theme="night"] .hero-title-base-layer,
+:root[data-theme="night"] .base-title,
+:root[data-theme="night"] .blog-hero-title,
+:root[data-theme="night"] .section-side-title h2 {
+  color: var(--text);
+}
+
+:root[data-theme="night"] .hero-title-mask-layer,
+:root[data-theme="night"] .mask-title {
+  color: var(--hero-inverse);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --hero-sphere-size: 220px;
+    --lens-size: 160px;
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --hero-sphere-size: 190px;
+    --lens-size: 128px;
+  }
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEO BLOG - Black & White Journal</title>
+  <meta name="description" content="Minimal black and white blog subpage with search, calendar archive and per-post comments." />
+  <script src="./js/theme.js?v=20260516-1"></script>
+  <link rel="stylesheet" href="./css/base.css?v=20260516-1" />
+  <link rel="stylesheet" href="./css/layout.css?v=20260516-1" />
+  <link rel="stylesheet" href="./css/sections.css?v=20260516-1" />
+  <link rel="stylesheet" href="./css/blog.css?v=20260516-1" />
+</head>
+<body class="blog-body">
+  <header class="site-header">
+    <a class="brand" href="./index.html">LEO</a>
+    <nav class="nav">
+      <a href="./index.html#about" class="nav-link">关于</a>
+      <a href="./index.html#skills" class="nav-link">技能</a>
+      <a href="./index.html#projects" class="nav-link">项目</a>
+      <a href="./index.html#cooperation" class="nav-link">合作</a>
+      <a href="./blog.html" class="nav-link is-active">博客</a>
+          </nav>
+    <div class="header-right">
+      <span class="location">河北 邯郸</span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换白天和夜间模式"></button>
+    </div>
+  </header>
+
+  <main class="blog-page-main stripe-bg soft-top-border">
+    <div class="blog-shell-inner">
+      <aside class="blog-sidebar" id="blogSidebarScroll">
+        <div class="blog-panel search-panel" id="searchPanel">
+          <div class="panel-head">
+            <span class="panel-badge">S</span>
+            <div>
+              <h2>查找文章</h2>
+            </div>
+          </div>
+          <label class="search-input-wrap" for="searchInput">
+            <input id="searchInput" type="text" placeholder="输入关键词，例如：设计 / 前端 / 日记" />
+            <span>⌕</span>
+          </label>
+          <div class="quick-tags" id="quickTags"></div>
+          <button class="ghost-btn" id="clearFiltersBtn" type="button">清空筛选</button>
+        </div>
+
+        <div class="blog-panel calendar-panel" id="calendarPanel">
+          <div class="panel-head compact-head">
+            <div>
+              <h2>日历归档</h2>
+            </div>
+            <div class="calendar-nav">
+              <button type="button" id="prevMonthBtn">←</button>
+              <button type="button" id="nextMonthBtn">→</button>
+            </div>
+          </div>
+          <div class="calendar-month" id="calendarMonth"></div>
+          <div class="calendar-weekdays">
+            <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+          <div class="calendar-filter-text" id="calendarFilterText">当前未按日期过滤</div>
+        </div>
+
+        <div class="blog-panel timeline-panel" id="timelinePanel">
+          <div class="panel-head">
+            <span class="panel-badge">T</span>
+            <div>
+              <h2>时间线</h2>
+            </div>
+          </div>
+          <div class="timeline-list" id="timelineList"></div>
+        </div>
+      </aside>
+
+      <section class="blog-right-scroll" id="blogRightScroll">
+        <section class="blog-hero dotted-bg" id="heroSection">
+          <div class="blog-panel blog-hero-panel">
+            <div class="blog-hero-inner">
+              <div class="blog-hero-chip">BLOG / JOURNAL / BLACK &amp; WHITE UI</div>
+              <h1 class="blog-hero-title">Moyun <span>Logs</span></h1>
+              <div class="blog-hero-meta">
+                <button type="button" class="hero-filter-btn" id="sortByTimeBtn">按时间排序</button>
+                <button type="button" class="hero-filter-btn" id="keywordSearchBtn">关键词查找</button>
+                <button type="button" class="hero-filter-btn" id="calendarArchiveBtn">日历归档</button>
+                <button type="button" class="hero-filter-btn" id="commentModeBtn">评论按文章隔离</button>
+                <button type="button" class="hero-filter-btn" id="adminEntryBtn">后台发布</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="blog-content-wrap">
+          <div class="blog-panel result-panel" id="resultPanel">
+            <div class="result-bar">
+              <div>
+                <h2>文章列表</h2>
+              </div>
+              <div class="result-stats" id="resultStats">0 篇结果</div>
+            </div>
+            <div class="post-list" id="postList"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./js/blog-data.js?v=20260516-1"></script>
+  <script src="./js/cms-config.js?v=20260516-1"></script>
+  <script src="https://static.cloudbase.net/cloudbase-js-sdk/latest/cloudbase.full.js"></script>
+  <script src="./js/cms-service.js?v=20260516-1"></script>
+  <script src="./js/blog.js?v=20260516-1"></script>
+</body>
+</html>
